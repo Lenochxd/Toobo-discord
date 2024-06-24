@@ -1,0 +1,2 @@
+# Bishokus
+ Discord bot rewrite
