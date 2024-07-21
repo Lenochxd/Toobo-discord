@@ -1,0 +1,49 @@
+{
+    "COMMENT": "SEE: https://docs.nextcord.dev/en/stable/api.html#nextcord.Locale",
+
+    "categories": {
+        "CONFIG": {
+            "prefix": {
+                "aliases": ["setprefix", "set_prefix"],
+                "hidden_aliases": "",
+                "visibility": "everyone",
+                "name": "prefix_name",
+                "desc": "prefix_desc",
+                "args": [
+                    {
+                        "name": "prefix_arg_name",
+                        "desc": "prefix_arg_desc"
+                    }
+                ]
+            },
+            "lang": {
+                "aliases": ["language", "setlang", "setlanguage", "serverlang", "serverlanguage"],
+                "hidden_aliases": ["setserverlang", "setserverlanguage", "set_serverlang", "set_server_lang", "setguildlang", "set_guildlang", "set_guild_lang", "guild_lang", "guildlang"],
+                "visibility": "everyone",
+                "name": "language_name",
+                "desc": "language_desc",
+                "args": [
+                    {
+                        "name": "language_arg_name",
+                        "desc": "language_arg_desc"
+                    }
+                ]
+            }
+        },
+        "FUN": {
+            "roll": {
+                "aliases": ["dice", "diceroll", "rolldice"],
+                "hidden_aliases": ["dice_roll", "roll_dice"],
+                "visibility": "everyone",
+                "name": "roll_name",
+                "desc": "roll_desc",
+                "args": [
+                    {
+                        "name": "roll_arg_name",
+                        "desc": "roll_arg_desc"
+                    }
+                ]
+            }
+        }
+    }
+}

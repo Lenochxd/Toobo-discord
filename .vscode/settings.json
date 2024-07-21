@@ -1,0 +1,8 @@
+
+{
+    "discord.enabled": true,
+    "cmake.configureOnOpen": false,
+    "files.exclude": {
+        "**/__pycache__": true
+    }
+}

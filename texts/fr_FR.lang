@@ -1,0 +1,55 @@
+# fr_FR.lang file written by Lenoch, feel free to make a PR for any mistakes
+# https://github.com/Bishoko/Bishokus/pulls
+
+# TRANSLATION INSTRUCTIONS:
+#  1. Preserve case sensitivity. Do not capitalize the text if it is not already capitalized.
+#  2. Don't translate lines starting with '#' as they are comments.
+#  3. Don't translate keys (the text before '=' on each line).
+#  4. Don't change variable syntax like '%prefix%'.
+
+
+lang_name=Français
+lang_code=fr
+credits=Lenoch
+
+# ====  Bot  ====
+bot_mention=Salut :D  Mon prefixe est : `%prefix%` ! \n\n**%prefix%help** pour voir les commandes, \nEt n'hésite pas à utiliser **!suggestion** !
+
+
+# ====  Discord Permissions  ====
+manage_guild_error=🚫 Désolé, vous n'avez pas la permission de `Gérer le serveur`
+
+
+# ====  !prefix  ====
+prefix_name=prefixe
+prefix_desc=Modifie le préfixe pour les commandes textes
+
+prefix_arg_name=préfixe
+prefix_arg_desc=Nouveau préfixe
+
+prefix_empty_error=🚫 Le préfixe ne peux pas être vide!
+prefix_length_error=🚫 Le préfixe est trop long!
+prefix_wrong_char_error=🚫 Le préfixe ne peux pas contenir le caractère: `%prefix%`.
+prefix_success=✅ Le préfixe a été défini sur `%prefix%`.
+
+
+# ====  !setguildlang  ====
+language_name=langue
+language_desc=Modifie la langue du bot pour le serveur
+
+language_arg_name=langue
+language_arg_desc=Nouvelle langue
+
+or=ou
+set_guild_lang_error=La langue "`%new_lang%`" n'est pas valide. \nVeuillez choisir une langue prise en charge parmi: \n %available_langs%
+set_guild_lang_success=✅ La langue pour le serveur a été définie sur `%new_lang%`
+
+
+# ====  !roll  ====
+roll_name=lancer
+roll_desc=Lance des dés au format NdN
+
+roll_arg_name=dé
+roll_arg_desc=Lancer des dés au format NdN (par exemple 2d6)
+
+roll_format_error=La commande doit être au format NdN ! \nExemple : `%prefix%roll 1d6`

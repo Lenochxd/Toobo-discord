@@ -1,0 +1,22 @@
+{
+    "production": false,
+    "default-language": "fr",
+    "default-slash-locale": "en-US",
+    "default-prefix": "!",
+    "tokens": {
+        "main": "BOT_TOKEN",
+        "test": "TEST_BOT_TOKEN"
+    },
+    "api-keys": {
+        "openweather": ""
+    },
+    "owner-id": 390265556357611521,
+    "bot-guild": 391919052563546112,
+    "mysql": {
+        "user": "bish",
+        "password": "PASSWORD_HERE",
+        "host": "localhost",
+        "port": 3306,
+        "database": "bishokus"
+    }
+}

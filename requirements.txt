@@ -1,0 +1,2 @@
+nextcord
+mysql-connector-python
