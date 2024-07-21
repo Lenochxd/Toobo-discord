@@ -5,7 +5,7 @@ import json
 
 with open('config/config.json') as config_file:
     config = json.load(config_file)
-    default_language = config['default-language']
+    default_prefix = config['default-language']
     
 
 def ensure_guild_exists(guild_id):
@@ -18,7 +18,7 @@ def ensure_guild_exists(guild_id):
 
     if result is None:
         # Guild doesn't exist, so we add it
-        execute_sql_file(cursor, 'utils/sql/init_guild.sql', (guild_id, default_language,))
+        execute_sql_file(cursor, 'utils/sql/init_guild.sql', (guild_id, default_prefix,))
 
         connection.commit()
 

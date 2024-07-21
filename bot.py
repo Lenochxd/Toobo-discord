@@ -11,9 +11,8 @@ import utils.sql as db
 langs_init()
 db.init()
 
-intents = nextcord.Intents.all()
-intents.typing = False
-intents.presences = False
+intents = nextcord.Intents.default()
+intents.message_content = True
 
 def load_config():
     with open("config/config.json", "r") as f:
@@ -31,6 +30,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
+    
     await handle_message(bot, message)
 
 register_slash_commands(bot)

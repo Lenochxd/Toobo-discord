@@ -1,1 +1,1 @@
-from . import prefix, lang
+from . import prefix

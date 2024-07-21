@@ -1,5 +1,3 @@
-from .convert_old_data import convert_data
-
 import mysql.connector
 import json
 import os
@@ -117,7 +115,6 @@ def init():
     print('Database | guilds_count:', guilds_count)
     if guilds_count < 1:
         print('The database is new.')
-        convert_old_data()
     
     conn.commit()
     conn.close()

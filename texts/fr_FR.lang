@@ -1,5 +1,5 @@
 # fr_FR.lang file written by Lenoch, feel free to make a PR for any mistakes
-# https://github.com/Bishoko/Bishokus/pulls
+# https://github.com/Lenochxd/Toobo-Discord/pulls
 
 # TRANSLATION INSTRUCTIONS:
 #  1. Preserve case sensitivity. Do not capitalize the text if it is not already capitalized.
@@ -13,7 +13,7 @@ lang_code=fr
 credits=Lenoch
 
 # ====  Bot  ====
-bot_mention=Salut :D  Mon prefixe est : `%prefix%` ! \n\n**%prefix%help** pour voir les commandes, \nEt n'hésite pas à utiliser **!suggestion** !
+bot_mention=Salut :D  Mon prefixe est : `%prefix%` ! \n\n**%prefix%help** pour voir les commandes !
 
 
 # ====  Discord Permissions  ====
@@ -33,23 +33,11 @@ prefix_wrong_char_error=🚫 Le préfixe ne peux pas contenir le caractère: `%p
 prefix_success=✅ Le préfixe a été défini sur `%prefix%`.
 
 
-# ====  !setguildlang  ====
-language_name=langue
-language_desc=Modifie la langue du bot pour le serveur
+# ====  !meteo  ====
+meteo_name=météo
+meteo_desc=Envoie la météo
 
-language_arg_name=langue
-language_arg_desc=Nouvelle langue
+meteo_arg_name=date
+meteo_arg_desc=Date de la météo
 
-or=ou
-set_guild_lang_error=La langue "`%new_lang%`" n'est pas valide. \nVeuillez choisir une langue prise en charge parmi: \n %available_langs%
-set_guild_lang_success=✅ La langue pour le serveur a été définie sur `%new_lang%`
-
-
-# ====  !roll  ====
-roll_name=lancer
-roll_desc=Lance des dés au format NdN
-
-roll_arg_name=dé
-roll_arg_desc=Lancer des dés au format NdN (par exemple 2d6)
-
-roll_format_error=La commande doit être au format NdN ! \nExemple : `%prefix%roll 1d6`
+meteo_format_error=La commande doit être au format JJ-MM-AAAA ! \nExemple : `%prefix%meteo 21/07/2024`

@@ -3,7 +3,7 @@ import random
 from utils.languages import text
 
 
-async def roll_dice(lang: str, prefix, message: nextcord.Message):
+async def send_meteo(lang: str, prefix, message: nextcord.Message):
     try:
         rolls, limit = map(int, message.content.split('d'))
     except ValueError:
@@ -15,7 +15,7 @@ async def roll_dice(lang: str, prefix, message: nextcord.Message):
     result = ', '.join(str(random.randint(1, limit)) for _ in range(rolls))
     await message.reply(result, mention_author=False)
 
-async def roll_dice_slash(lang: str, prefix, interaction: nextcord.Interaction, dice: str):
+async def send_meteo_slash(lang: str, prefix, interaction: nextcord.Interaction, dice: str):
     try:
         rolls, limit = map(int, dice.split('d'))
     except ValueError:

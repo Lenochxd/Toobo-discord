@@ -1,12 +1,6 @@
 from functools import wraps
 from utils.sql import get_db_connection, execute_sql_file
 
-import json
-
-with open('config/config.json') as config_file:
-    config = json.load(config_file)
-    default_language = config['default-language']
-
 
 def ensure_user_exists(user_id):
     connection = get_db_connection()
@@ -18,7 +12,7 @@ def ensure_user_exists(user_id):
 
     if result is None:
         # User doesn't exist, so we add it
-        execute_sql_file(cursor, 'utils/sql/init_user.sql', (user_id, default_language,))
+        execute_sql_file(cursor, 'utils/sql/init_user.sql', (user_id,))
 
         connection.commit()
 
