@@ -4,10 +4,10 @@
 if [ ! -d ".venv" ]; then
     echo "Creating virtual environment..."
     sudo python3 -m venv .venv
-    source .venv/bin/activate
+    . .venv/bin/activate
     python3 -m pip install -r requirements.txt
     echo "Virtual environment created successfully."
 else
     echo "Virtual environment already exists. Activating it..."
-    source .venv/bin/activate
+    . .venv/bin/activate
 fi
