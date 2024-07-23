@@ -10,4 +10,6 @@ if [ ! -d ".venv" ]; then
 else
     echo "Virtual environment already exists. Activating it..."
     . .venv/bin/activate
+    echo "Installing requirements..."
+    python3 -m pip install -r requirements.txt
 fi

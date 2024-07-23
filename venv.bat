@@ -10,4 +10,6 @@ if not exist ".venv" (
 ) else (
     echo Virtual environment already exists.
     call .venv\Scripts\activate.bat
+    echo Installing requirements...
+    python -m pip install -r requirements.txt
 )
