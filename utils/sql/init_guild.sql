@@ -8,6 +8,6 @@ INSERT INTO guilds (
     %s,      -- id
     %s,      -- prefix
     NULL,    -- auto_channelid
-    '19:50', -- auto_message_hour
-    0       -- request_count
+    %s,      -- auto_message_hour
+    0        -- request_count
 )

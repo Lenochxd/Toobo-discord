@@ -1,5 +1,6 @@
 {
     "production": false,
+    "default-time": "19:50",
     "default-language": "fr",
     "default-slash-locale": "fr",
     "default-prefix": ";",
