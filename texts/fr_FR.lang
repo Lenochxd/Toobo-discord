@@ -38,6 +38,7 @@ meteo_name=météo
 meteo_desc=Envoie la météo
 
 meteo_arg_name=date
-meteo_arg_desc=Date de la météo
+meteo_arg_desc=Date de la météo, au format JJ-MM-AAAA. Exemple: 21/07/2024
 
+meteo_404_error=dsl g pas trouvé
 meteo_format_error=La commande doit être au format JJ-MM-AAAA ! \nExemple : `%prefix%meteo 21/07/2024`

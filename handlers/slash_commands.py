@@ -47,14 +47,17 @@ def register_slash_commands(bot: commands.Bot):
         description_localizations=locales[command]['desc']
     )
     async def meteo_command(interaction: nextcord.Interaction,
-        dice: str = nextcord.SlashOption(
+        meteo_date: str = nextcord.SlashOption(
             name=locales[command]['args'][0]['name'][default_locale],
             name_localizations=locales[command]['args'][0]['name'],
             description=locales[command]['args'][0]['desc'][default_locale],
-            description_localizations=locales[command]['args'][0]['desc']
+            description_localizations=locales[command]['args'][0]['desc'],
+            required=False,
+            min_length=6, # 1/2/24
+            max_length=10 # 10/21/2024
         )
     ):
-        await send_meteo_slash(lang, prefix.get(interaction.guild_id), interaction, dice)
+        await send_meteo_slash(lang, prefix.get(interaction.guild_id), interaction, meteo_date)
 
 # Testing
 if __name__ == '__main__':
