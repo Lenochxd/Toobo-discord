@@ -22,7 +22,7 @@ def register_slash_commands(bot: commands.Bot):
     command = 'prefix'
     @bot.slash_command(
         name=locales[command]['name'][default_locale],
-        description=locales[command]['name'][default_locale],
+        description=locales[command]['desc'][default_locale],
         name_localizations=locales[command]['name'],
         description_localizations=locales[command]['desc'],
         default_member_permissions=(nextcord.Permissions(manage_guild=True))
