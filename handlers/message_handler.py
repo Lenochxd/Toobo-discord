@@ -29,9 +29,9 @@ async def handle_message(bot, message: nextcord.Message):
     bot_mention = f'<@{bot.user.id}>'
     if message.content == bot_mention or (bot_mention in message.content.lstrip('!') and not message.content.startswith(bot_mention)):
         await message.reply(
-            text('bot_mention', lang),
+            text('bot_mention', lang).replace('%prefix%', p),
             mention_author=False
-        ).replace('%prefix%', p)
+        )
     
     
     if message.content.startswith(p) or message.content.lstrip('!').startswith(f'<@{bot.application_id}>'):
