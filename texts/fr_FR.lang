@@ -32,6 +32,20 @@ prefix_length_error=🚫 Le préfixe est trop long!
 prefix_wrong_char_error=🚫 Le préfixe ne peux pas contenir le caractère: `%prefix%`.
 prefix_success=✅ Le préfixe a été défini sur `%prefix%`.
 
+# ====  !setup  !setdaily  ====
+setup_name=setup
+setup_desc=Modifie l'heure et le salon d'envoi du message journalier de météo
+
+setup_arg_channel_name=salon
+setup_arg_channel_desc=Salon du message journalier
+
+setup_arg_time_name=heure
+setup_arg_time_desc=L'heure du message journalier
+
+setup_invalid_syntax=La commande doit être au format : `%prefix%setup <#salon> <heure>` \nUtilise la commande /setup c'est plus simple hein
+setup_invalid_time_format=Elle existe cette heure même?? jamais vu igo
+setup_success=✅ La météo quotidienne a été activée dans le salon %channel%, tous les jours à `%time%`.
+
 
 # ====  !meteo  ====
 meteo_name=météo

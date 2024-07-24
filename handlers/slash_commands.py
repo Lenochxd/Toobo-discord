@@ -1,13 +1,15 @@
 import json
 import nextcord
 from nextcord.ext import commands, application_checks
+from nextcord.abc import GuildChannel
 from utils.get_commands_locales import get_commands_locales
 
 from commands.meteo import send_meteo_slash
+from commands.settings.set_daily import set_daily_slash
 from commands.settings.set_prefix import set_prefix_slash
 
 from utils.settings import prefix
-from utils.languages import get_languages_info
+
 
 # Load JSON localization data
 with open('config/config.json', 'r', encoding='utf-8') as config_file:
@@ -37,6 +39,35 @@ def register_slash_commands(bot: commands.Bot):
         )
     ):
         await set_prefix_slash(lang, interaction, new_prefix)
+    
+    
+    command = 'setup'
+    @bot.slash_command(
+        name=locales[command]['name'][default_locale],
+        description=locales[command]['desc'][default_locale],
+        name_localizations=locales[command]['name'],
+        description_localizations=locales[command]['desc'],
+        default_member_permissions=(nextcord.Permissions(manage_guild=True))
+    )
+    @application_checks.has_permissions(manage_guild=True)
+    async def set_daily_command(interaction: nextcord.Interaction,
+        channel: GuildChannel = nextcord.SlashOption(
+            name=locales[command]['args'][0]['name'][default_locale],
+            name_localizations=locales[command]['args'][0]['name'],
+            description=locales[command]['args'][0]['desc'][default_locale],
+            description_localizations=locales[command]['args'][0]['desc'],
+            channel_types=[nextcord.ChannelType.text]
+        ),
+        new_time: str = nextcord.SlashOption(
+            name=locales[command]['args'][1]['name'][default_locale],
+            name_localizations=locales[command]['args'][1]['name'],
+            description=locales[command]['args'][1]['desc'][default_locale],
+            description_localizations=locales[command]['args'][1]['desc'],
+            min_length=1, # 9
+            max_length=6  # 19:50h
+        )
+    ):
+        await set_daily_slash(lang, interaction, new_time, channel)
     
     
     command = 'meteo'

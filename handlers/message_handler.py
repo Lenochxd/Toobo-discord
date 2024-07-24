@@ -6,6 +6,7 @@ from utils.settings import prefix
 
 from commands.meteo import send_meteo
 from commands.settings.set_prefix import set_prefix
+from commands.settings.set_daily import set_daily
 
 with open('config/config.json') as config_file:
     config = json.load(config_file)
@@ -41,6 +42,10 @@ async def handle_message(bot, message: nextcord.Message):
         command = message.content.split()[0].lower().replace('é','e')
         
         match command:
+            case 'setup' | 'config' | 'configure' | 'heure' | 'daily' | 'time' | 'settime' | 'set_time' | 'set_daily':
+                message.content = remove_command(message.content, ('setup', 'config', 'configure', 'heure', 'daily', 'time', 'settime', 'set_time', 'set_daily'))
+                await set_daily(lang, p, message)
+                
             case 'prefix' | 'setprefix' | 'set_prefix':
                 message.content = remove_command(message.content, ('prefix', 'setprefix', 'set_prefix'))
                 await set_prefix(lang, message)
@@ -50,5 +55,4 @@ async def handle_message(bot, message: nextcord.Message):
                 await send_meteo(lang, p, message)
                 
             case _:
-                print(f"Unknown command: {command}")
-                
+                print(f'Unknown command: {command}')

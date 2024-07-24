@@ -15,6 +15,23 @@
                         "desc": "prefix_arg_desc"
                     }
                 ]
+            },
+            "setup": {
+                "aliases": ["config", "configure", "setdaily", "heure", "daily", "time", "settime", "set_time", "set_daily"],
+                "hidden_aliases": "",
+                "visibility": "everyone",
+                "name": "setup_name",
+                "desc": "setup_desc",
+                "args": [
+                    {
+                        "name": "setup_arg_channel_name",
+                        "desc": "setup_arg_channel_desc"
+                    },
+                    {
+                        "name": "setup_arg_time_name",
+                        "desc": "setup_arg_time_desc"
+                    }
+                ]
             }
         },
         "METEO": {
