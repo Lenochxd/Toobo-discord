@@ -24,12 +24,15 @@ def load_config():
 config = load_config()
 
 
-bot = commands.Bot(command_prefix=config['default-prefix'], intents=intents)
+bot = commands.Bot(
+    command_prefix=config.get('default-prefix', ';'),
+    owner_id=config.get('owner-id'),
+    intents=intents
+)
 
 
 @bot.event
 async def on_message(message):
-    
     await handle_message(bot, message)
 
 register_slash_commands(bot)

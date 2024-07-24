@@ -29,7 +29,10 @@ def register_slash_commands(bot: commands.Bot):
         description_localizations=locales[command]['desc'],
         default_member_permissions=(nextcord.Permissions(manage_guild=True))
     )
-    @application_checks.has_permissions(manage_guild=True)
+    @application_checks.check_any(
+        application_checks.has_permissions(manage_guild=True),
+        application_checks.is_owner()
+    )
     async def prefix_command(interaction: nextcord.Interaction,
         new_prefix: str = nextcord.SlashOption(
             name=locales[command]['args'][0]['name'][default_locale],
@@ -49,7 +52,10 @@ def register_slash_commands(bot: commands.Bot):
         description_localizations=locales[command]['desc'],
         default_member_permissions=(nextcord.Permissions(manage_guild=True))
     )
-    @application_checks.has_permissions(manage_guild=True)
+    @application_checks.check_any(
+        application_checks.has_permissions(manage_guild=True),
+        application_checks.is_owner()
+    )
     async def set_daily_command(interaction: nextcord.Interaction,
         channel: GuildChannel = nextcord.SlashOption(
             name=locales[command]['args'][0]['name'][default_locale],
