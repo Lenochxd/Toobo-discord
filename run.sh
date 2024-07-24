@@ -8,4 +8,4 @@ else
 fi
 
 # Run the bot
-python bot.py
+python3 bot.py
