@@ -63,6 +63,7 @@ def register_slash_commands(bot: commands.Bot):
             name_localizations=locales[command]['args'][1]['name'],
             description=locales[command]['args'][1]['desc'][default_locale],
             description_localizations=locales[command]['args'][1]['desc'],
+            default=config.get('default-time', '19:50'),
             min_length=1, # 9
             max_length=6  # 19:50h
         )
