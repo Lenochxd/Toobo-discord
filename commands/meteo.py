@@ -34,8 +34,11 @@ def format_date(date_str):
 
     return f"{year}-{month}-{day}"
     
-async def get_meteo(lang, date):
+async def get_meteo(lang, date=get_tomorrow_date()):
     global meteo_cache
+    
+    if date.strip() == '':
+        date = get_tomorrow_date()
 
     date = format_date(date)
 
@@ -58,8 +61,6 @@ async def get_meteo(lang, date):
 async def send_meteo(lang: str, prefix, message: nextcord.Message):
     try:
         meteo_date = message.content
-        if meteo_date == '':
-            meteo_date = get_tomorrow_date()
 
         await message.reply(
             await get_meteo(lang, meteo_date),
@@ -75,19 +76,17 @@ async def send_meteo(lang: str, prefix, message: nextcord.Message):
 
 async def send_meteo_slash(lang: str, prefix, interaction: nextcord.Interaction, meteo_date: str=None):
     try:
-        if not meteo_date:
-            meteo_date = get_tomorrow_date()
-
-        try:
-            await interaction.response.send_message(
-                await get_meteo(lang, meteo_date)
-            )
-        except Exception:
-            print("The API took too long to respond.")
-    
+        meteo = await get_meteo(lang, meteo_date)
     except Exception:
         await interaction.response.send_message(
             text('meteo_format_error', lang).replace('%prefix%', prefix),
             ephemeral=True
         )
+        return
+        
+    try:
+        await interaction.response.send_message(meteo)
+    except Exception:
+        print("The API took too long to respond.")
+    
         
