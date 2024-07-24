@@ -5,7 +5,7 @@ import json
 
 with open('config/config.json') as config_file:
     config = json.load(config_file)
-    default_prefix = config['default-language']
+    default_prefix = config['default-prefix']
     default_time = config['default-time']
     
 
