@@ -28,17 +28,7 @@ async def format_time(lang, new_time, interaction: nextcord.Interaction=None, me
         if hours < 0 or hours > 23 or minutes < 0 or minutes > 59:
             raise ValueError
     except ValueError:
-        if interaction:
-            await interaction.response.send_message(
-                text('setup_invalid_time_format', lang),
-                ephemeral=True
-            )
-        else:
-            await message.reply(
-                text('setup_invalid_time_format', lang),
-                mention_author=False
-            )
-        return
+        return None
     
     return formatted_time
 
@@ -86,6 +76,11 @@ async def set_daily(lang: str, prefix: str, message: nextcord.Message):
             text('setup_success', lang).replace('%channel%', f'<#{channel_id}>').replace('%time%', new_time),
             mention_author=False
         )
+    else:
+        await message.reply(
+            text('setup_invalid_time_format', lang),
+            mention_author=False
+        )
 
 async def set_daily_slash(lang: str, interaction: nextcord.Interaction, new_time: str, channel: GuildChannel):
     new_time = await format_time(lang, new_time, interaction)
@@ -96,4 +91,9 @@ async def set_daily_slash(lang: str, interaction: nextcord.Interaction, new_time
     if new_time:
         await interaction.response.send_message(
             text('setup_success', lang).replace('%channel%', f'<#{channel.id}>').replace('%time%', new_time)
+        )
+    else:
+        await interaction.response.send_message(
+            text('setup_invalid_time_format', lang),
+            ephemeral=True
         )
