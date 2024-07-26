@@ -3,15 +3,14 @@ import nextcord
 
 from utils.languages import text
 from utils.settings import prefix
+from utils.config import config
 
 from commands.meteo import send_meteo
 from commands.settings.set_prefix import set_prefix
 from commands.settings.set_daily import set_daily
 
-with open('config/config.json') as config_file:
-    config = json.load(config_file)
-    lang = config['default-language']
-    
+lang = config.get('default-language', 'fr')
+
 
 def remove_command(content: str, prefixes: tuple) -> str:
     for prefix in prefixes:

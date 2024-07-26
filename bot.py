@@ -9,6 +9,7 @@ from handlers.slash_commands import register_slash_commands
 from commands.meteo import get_meteo
 from utils.settings import daily
 from utils.languages import init as langs_init
+from utils.config import config
 import utils.sql as db
 
 langs_init()
@@ -17,19 +18,16 @@ db.init()
 intents = nextcord.Intents.default()
 intents.message_content = True
 
-def load_config():
-    with open("config/config.json", "r") as f:
-        return json.load(f)
 
-config = load_config()
-
-
-bot = commands.Bot(command_prefix=config['default-prefix'], intents=intents)
+bot = commands.Bot(
+    command_prefix=config.get('default-prefix', ';'),
+    owner_id=config.get('owner-id'),
+    intents=intents
+)
 
 
 @bot.event
 async def on_message(message):
-    
     await handle_message(bot, message)
 
 register_slash_commands(bot)

@@ -2,9 +2,8 @@ import mysql.connector
 import json
 import os
 
-with open('config/config.json') as f:
-    config = json.load(f)
-    db_config = config['mysql']
+from utils.config import config
+db_config = config['mysql']
 
 
 def get_db_connection():

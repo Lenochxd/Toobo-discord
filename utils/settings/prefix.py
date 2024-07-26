@@ -2,11 +2,8 @@ import mysql.connector
 from utils.sql import get_db_connection
 from utils.sql.create_guild import guild_db
 
-import json
-
-with open('config/config.json') as config_file:
-    config = json.load(config_file)
-    default_prefix = config['default-prefix']
+from utils.config import config
+default_prefix = config.get('default-prefix', ';')
     
 
 @guild_db

@@ -1,13 +1,10 @@
 from functools import wraps
 from utils.sql import get_db_connection, execute_sql_file
 
-import json
+from utils.config import config
+default_prefix = config.get('default-prefix', ';')
+default_time = config.get('default-time', '19:50')
 
-with open('config/config.json') as config_file:
-    config = json.load(config_file)
-    default_prefix = config['default-prefix']
-    default_time = config['default-time']
-    
 
 def ensure_guild_exists(guild_id):
     connection = get_db_connection()

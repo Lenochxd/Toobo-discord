@@ -5,11 +5,9 @@ from nextcord.abc import GuildChannel
 from utils.languages import text
 
 from utils.settings import daily
+from utils.config import config
+bot_owner = config.get('owner-id')
 
-with open('config/config.json') as f:
-    config = json.load(f)
-    bot_owner = config.get('owner-id')
-    
 
 async def format_time(lang, new_time, interaction: nextcord.Interaction=None, message: nextcord.Message=None):
     # Format new_time

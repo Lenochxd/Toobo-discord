@@ -3,10 +3,8 @@ import nextcord
 from utils.languages import text
 
 from utils.settings import prefix
-
-with open('config/config.json') as f:
-    config = json.load(f)
-    bot_owner = config.get('owner-id')
+from utils.config import config
+bot_owner = config.get('owner-id')
 
 
 async def set_prefix(lang: str, message: nextcord.Message):

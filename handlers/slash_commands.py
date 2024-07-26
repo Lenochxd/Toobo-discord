@@ -9,13 +9,10 @@ from commands.settings.set_daily import set_daily_slash
 from commands.settings.set_prefix import set_prefix_slash
 
 from utils.settings import prefix
+from utils.config import config
 
-
-# Load JSON localization data
-with open('config/config.json', 'r', encoding='utf-8') as config_file:
-    config = json.load(config_file)
-    default_locale = config['default-slash-locale']
-    lang = config['default-language']
+default_locale = config.get('default-slash-locale', 'fr')
+lang = config.get('default-language', 'fr')
 
 
 def register_slash_commands(bot: commands.Bot):
