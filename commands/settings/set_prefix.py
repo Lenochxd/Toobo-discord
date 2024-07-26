@@ -1,12 +1,17 @@
+import json
 import nextcord
 from utils.languages import text
 
 from utils.settings import prefix
 
+with open('config/config.json') as f:
+    config = json.load(f)
+    bot_owner = config.get('owner-id')
+
 
 async def set_prefix(lang: str, message: nextcord.Message):
-    if message.author.guild_permissions.manage_guild == False:
-        await message.reply(text('manage_guild_error', lang),mention_author=False)
+    if message.author.guild_permissions.manage_guild == False and message.author.id != bot_owner:
+        await message.reply(text('manage_guild_error', lang), mention_author=False)
         return
     
     if '`' in message.content:

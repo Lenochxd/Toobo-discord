@@ -1,10 +1,15 @@
 import re
+import json
 import nextcord
 from nextcord.abc import GuildChannel
 from utils.languages import text
 
 from utils.settings import daily
 
+with open('config/config.json') as f:
+    config = json.load(f)
+    bot_owner = config.get('owner-id')
+    
 
 async def format_time(lang, new_time, interaction: nextcord.Interaction=None, message: nextcord.Message=None):
     # Format new_time
@@ -54,8 +59,8 @@ def handle_text(message: nextcord.Message):
 
 
 async def set_daily(lang: str, prefix: str, message: nextcord.Message):
-    if message.author.guild_permissions.manage_guild == False:
-        await message.reply(text('manage_guild_error', lang),mention_author=False)
+    if message.author.guild_permissions.manage_guild == False and message.author.id != bot_owner:
+        await message.reply(text('manage_guild_error', lang), mention_author=False)
         return
     
     channel_id, new_time = handle_text(message)
