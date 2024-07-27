@@ -36,8 +36,8 @@
                 ]
             },
             "activer-toobo": {
-                "aliases": ["activer", "enable", "activer-toobo", "enable-toobo"],
-                "hidden_aliases": ["activertoobo", "enabletoobo"],
+                "aliases": ["activer", "enable", "activer-toobo", "enable-toobo", "enabledaily"],
+                "hidden_aliases": ["activertoobo", "enabletoobo", "enable-daily"],
                 "visibility": "everyone",
                 "permissions": ["manage_guild"],
                 "name": "enable_daily_name",
@@ -45,8 +45,8 @@
                 "args": []
             },
             "desactiver-toobo": {
-                "aliases": ["desactiver-toobo", "desactiver", "disable", "disable-toobo"],
-                "hidden_aliases": ["desactivertoobo", "disabletoobo"],
+                "aliases": ["desactiver-toobo", "desactiver", "disable", "disable-toobo", "disabledaily"],
+                "hidden_aliases": ["desactivertoobo", "disabletoobo", "disable-daily"],
                 "visibility": "everyone",
                 "permissions": ["manage_guild"],
                 "name": "disable_daily_name",

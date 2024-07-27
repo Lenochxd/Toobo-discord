@@ -45,11 +45,11 @@ async def handle_message(bot, message: nextcord.Message):
                 message.content = remove_command(message.content, ('setup', 'config', 'configure', 'heure', 'daily', 'time', 'settime', 'set_time', 'set_daily'))
                 await set_daily(lang, p, message)
                 
-            case 'activer-toobo' | 'activer' | 'enable' | 'enable-toobo' | 'activertoobo' | 'enabletoobo':
+            case 'activer-toobo' | 'activer' | 'enable' | 'enable-toobo' | 'enabledaily' | 'enable-daily' | 'activertoobo' | 'enabletoobo':
                 message.content = remove_command(message.content, ('activer-toobo', 'activer', 'enable', 'enable-toobo', 'activertoobo', 'enabletoobo'))
                 await enable_auto_message(lang, message)
                 
-            case 'desactiver-toobo' | 'desactiver' | 'disable' | 'disable-toobo' | 'desactivertoobo' | 'disabletoobo':
+            case 'desactiver-toobo' | 'desactiver' | 'disable' | 'disable-toobo' 'disabledaily' | 'disable-daily' | 'desactivertoobo' | 'disabletoobo':
                 message.content = remove_command(message.content, ('desactiver-toobo', 'desactiver', 'disable', 'disable-toobo', 'desactivertoobo', 'disabletoobo'))
                 await disable_auto_message(lang, message)
                 
