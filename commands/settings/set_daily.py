@@ -69,7 +69,7 @@ async def set_daily(lang: str, prefix: str, message: nextcord.Message):
         )
         return
 
-    new_time = await format_time(lang, new_time, None, message)
+    new_time = await format_time(new_time)
 
     daily.set_time(message.guild.id, new_time)
     daily.set_channel(message.guild.id, channel_id)
@@ -86,7 +86,7 @@ async def set_daily(lang: str, prefix: str, message: nextcord.Message):
         )
 
 async def set_daily_slash(lang: str, interaction: nextcord.Interaction, new_time: str, channel: GuildChannel):
-    new_time = await format_time(lang, new_time, interaction)
+    new_time = await format_time(new_time)
 
     daily.set_time(interaction.guild_id, new_time)
     daily.set_channel(interaction.guild_id, channel.id)
