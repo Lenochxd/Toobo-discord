@@ -5,7 +5,7 @@ from nextcord.abc import GuildChannel
 from utils.get_commands_locales import get_commands_locales
 
 from commands.meteo import send_meteo_slash
-from commands.settings.enable import enable_auto_message, disable_auto_message
+from commands.settings.enable import enable_auto_message_slash, disable_auto_message_slash
 from commands.settings.set_daily import set_daily_slash
 from commands.settings.set_prefix import set_prefix_slash
 
@@ -77,7 +77,7 @@ def register_slash_commands(bot: commands.Bot):
         description_localizations=locales[command]['desc']
     )
     async def enable_auto_message_command(interaction: nextcord.Interaction):
-        await enable_auto_message(lang, interaction)
+        await enable_auto_message_slash(lang, interaction)
     
     
     command = 'desactiver-toobo'
@@ -88,7 +88,7 @@ def register_slash_commands(bot: commands.Bot):
         description_localizations=locales[command]['desc']
     )
     async def disable_auto_message_command(interaction: nextcord.Interaction):
-        await disable_auto_message(lang, interaction)
+        await disable_auto_message_slash(lang, interaction)
     
     
     command = 'meteo'

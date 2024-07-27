@@ -51,12 +51,13 @@ setup_success=✅ La météo quotidienne a été activée dans le salon %channel
 # ====  !enable-toobo  ====
 enable_daily_name=activer-toobo
 enable_daily_desc=Active les messages quotidiens de Toobo
+enable_daily_success=Les messages quotidiens de Toobo ont été activés avec succès :D
 
 
 # ====  !disable-toobo  ====
 disable_daily_name=desactiver-toobo
 disable_daily_desc=Désactive les messages quotidiens de Toobo
-
+disable_daily_success=Les messages quotidiens de Toobo ont été désactivés avec succès :'(
 
 # ====  !meteo  ====
 meteo_name=météo

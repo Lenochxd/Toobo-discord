@@ -1,4 +1,3 @@
-import json
 import nextcord
 
 from utils.languages import text
@@ -8,6 +7,7 @@ from utils.config import config
 from commands.meteo import send_meteo
 from commands.settings.set_prefix import set_prefix
 from commands.settings.set_daily import set_daily
+from commands.settings.enable import enable_auto_message, disable_auto_message
 
 lang = config.get('default-language', 'fr')
 
@@ -44,6 +44,14 @@ async def handle_message(bot, message: nextcord.Message):
             case 'setup' | 'config' | 'configure' | 'heure' | 'daily' | 'time' | 'settime' | 'set_time' | 'set_daily':
                 message.content = remove_command(message.content, ('setup', 'config', 'configure', 'heure', 'daily', 'time', 'settime', 'set_time', 'set_daily'))
                 await set_daily(lang, p, message)
+                
+            case 'activer-toobo' | 'activer' | 'enable' | 'enable-toobo' | 'activertoobo' | 'enabletoobo':
+                message.content = remove_command(message.content, ('activer-toobo', 'activer', 'enable', 'enable-toobo', 'activertoobo', 'enabletoobo'))
+                await enable_auto_message(lang, message)
+                
+            case 'desactiver-toobo' | 'desactiver' | 'disable' | 'disable-toobo' | 'desactivertoobo' | 'disabletoobo':
+                message.content = remove_command(message.content, ('desactiver-toobo', 'desactiver', 'disable', 'disable-toobo', 'desactivertoobo', 'disabletoobo'))
+                await disable_auto_message(lang, message)
                 
             case 'prefix' | 'setprefix' | 'set_prefix':
                 message.content = remove_command(message.content, ('prefix', 'setprefix', 'set_prefix'))
