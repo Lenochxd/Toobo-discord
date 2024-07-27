@@ -7,6 +7,7 @@
                 "aliases": ["setprefix", "set_prefix"],
                 "hidden_aliases": "",
                 "visibility": "everyone",
+                "permissions": ["manage_guild"],
                 "name": "prefix_name",
                 "desc": "prefix_desc",
                 "args": [
@@ -20,6 +21,7 @@
                 "aliases": ["config", "configure", "setdaily", "heure", "daily", "time", "settime", "set_time", "set_daily"],
                 "hidden_aliases": "",
                 "visibility": "everyone",
+                "permissions": ["manage_guild"],
                 "name": "setup_name",
                 "desc": "setup_desc",
                 "args": [
@@ -32,6 +34,24 @@
                         "desc": "setup_arg_time_desc"
                     }
                 ]
+            },
+            "activer-toobo": {
+                "aliases": ["activer", "enable", "activer-toobo", "enable-toobo"],
+                "hidden_aliases": ["activertoobo", "enabletoobo"],
+                "visibility": "everyone",
+                "permissions": ["manage_guild"],
+                "name": "enable_daily_name",
+                "desc": "enable_daily_desc",
+                "args": []
+            },
+            "desactiver-toobo": {
+                "aliases": ["config", "configure", "setdaily", "heure", "daily", "time", "settime", "set_time", "set_daily"],
+                "hidden_aliases": "",
+                "visibility": "everyone",
+                "permissions": ["manage_guild"],
+                "name": "disable_daily_name",
+                "desc": "disable_daily_desc",
+                "args": []
             }
         },
         "METEO": {

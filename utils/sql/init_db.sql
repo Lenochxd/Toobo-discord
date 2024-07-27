@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS guilds (
     prefix TINYTEXT,
     auto_channelid BIGINT,
     auto_message_hour TEXT(5),
+    auto_message_enabled BOOLEAN,
     request_count BIGINT
 );
 

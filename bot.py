@@ -41,7 +41,7 @@ async def minute_loop():
         if time and time == datetime.now().strftime("%H:%M"):
             channel_id = daily.get_channel(guild.id)
             channel = bot.get_channel(channel_id)
-            if channel:
+            if channel and daily.is_enabled(guild.id) == True:
                 await channel.send(
                     await get_meteo(
                         config.get('default-language', 'fr')
