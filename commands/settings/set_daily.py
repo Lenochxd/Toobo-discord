@@ -9,7 +9,7 @@ from utils.config import config
 bot_owner = config.get('owner-id')
 
 
-async def format_time(lang, new_time, interaction: nextcord.Interaction=None, message: nextcord.Message=None):
+async def format_time(new_time):
     # Format new_time
     formatted_time = ""
     if "h" in new_time:
