@@ -1,29 +1,26 @@
-# Bishokus
-Discord Bot Rewrite
+# Toobo discord bot
 
-Bishokus is a French Discord bot designed to enhance and entertain your server. Originally developed by [Lenoch](https://github.com/Lenochxd), the bot is being rewritten to improve functionality and maintainability.
+Toobo is a character from the French children's weather forecast show "[La météo de Gulli](https://fr.wikipedia.org/wiki/La_M%C3%A9t%C3%A9o_de_Gulli)". This adorable mascot presents weather information in a fun and engaging way for young viewers. In the show, Toobo uses simple language and playful animations to explain weather concepts and forecasts, making meteorology accessible and entertaining for children.
 
-While only three commands are currently available in this version, more features will be added soon. \
-The bot is built using [Nextcord](https://github.com/nextcord/nextcord) and uses MySQL for data. \
-Works with every os. 
+This Discord bot uses the [Toobo-API](https://github.com/Lenochxd/Toobo-API) to cast daily messages with meteorological information. It brings a cheerful approach to weather updates on Discord servers, providing weather information and forecasts with a friendly personality, making it both informative, enjoyable and funny.
 
-<!-- ## Features
 
-- **Word Games:** Enjoy fun word games to liven up your server (e.g., "quoi? FEUR XDDDD").
-- **Sniper Function:** View deleted messages with the `/snipe` command.
-- **Ratio Battles:** Start a ratio battle by replying to a message with `/ratio` or a Tenor GIF.
-- **TalkingBen:** The bot can mimic TalkingBen, the famous talking dog.
-- **Music:** Play music from various sources including YouTube, SoundCloud, Twitch, Bandcamp, Vimeo, and more.
+## Commands
 
-To see all available commands, use the `/help` command.
+- **/meteo:** Get weather information for a specific date
+- **/setup:** Set up daily weather updates for a channel at a specified time
+- **/prefix:** Change the bot's command prefix
+- **/enable-toobo:** Enable automatic messages
+- **/disable-toobo:** Disable automatic messages
 
-Feel free to send your suggestions using `/suggestions` or [GitHub Issues](https://github.com/Bishoko/Bishokus/issues/new/choose). All feedback is appreciated and will be considered. -->
+<!-- To see all available commands, use the `/help` command. -->
 
-## Add Bishokus to Your Server
 
-To add the old version of Bishokus, which includes all existing commands, click the link below:
+## Add Toobo to Your Server
 
-[Add Bishokus to Your Server](https://discord.com/api/oauth2/authorize?client_id=854081099638112256&permissions=277582703681&scope=bot%20applications.commands)
+To add the Toobo bot, click the link below:
+
+https://discord.com/oauth2/authorize?client_id=1264602192564981863
 
 <br>
 
