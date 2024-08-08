@@ -52,7 +52,7 @@ async def get_meteo(lang, date=get_tomorrow_date()):
         async with session.get(url) as response:
             if response.status == 200:
                 data = await response.json()
-                meteo_cache[date] = data.get('text', text('meteo_404_error', lang))
+                meteo_cache[date] = data.get('data',{}).get('text', text('meteo_404_error', lang))
                 return meteo_cache[date]
             else:
                 return None
@@ -89,4 +89,3 @@ async def send_meteo_slash(lang: str, prefix, interaction: nextcord.Interaction,
     except Exception:
         print("The API took too long to respond.")
     
-        
