@@ -74,7 +74,10 @@ async def send_meteo(lang: str, prefix, message: nextcord.Message):
         )
 
 
-async def send_meteo_slash(lang: str, prefix, interaction: nextcord.Interaction, meteo_date: str=None):
+async def send_meteo_slash(lang: str, prefix, interaction: nextcord.Interaction, meteo_date: str=get_tomorrow_date()):
+    if meteo_date is None:
+        meteo_date = get_tomorrow_date()
+        
     try:
         meteo = await get_meteo(lang, meteo_date)
     except Exception:
