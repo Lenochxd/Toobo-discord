@@ -13,6 +13,7 @@ lang = config.get('default-language', 'fr')
 
 
 def remove_command(content: str, prefixes: tuple) -> str:
+    content = content.replace('é', 'e')
     for prefix in prefixes:
         if content.startswith(prefix):
             return content[len(prefix):].strip()
