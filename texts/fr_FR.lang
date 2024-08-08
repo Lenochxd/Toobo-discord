@@ -64,9 +64,9 @@ meteo_name=météo
 meteo_desc=Envoie la météo
 
 meteo_arg_name=date
-meteo_arg_desc=Date de la météo, au format JJ-MM-AAAA. Exemple: 21/07/2024
+meteo_arg_desc=Date de la météo, au format JJ-MM-AAAA. Exemple: 22/07/2024
 
 meteo_404_error=dsl g pas trouvé
 meteo_daily_403_error=Je n'ai pas pu envoyer le message quotidien dans le salon désigné. \rMerci de vérifier mes permissions dans le salon %channel_mention%.
 meteo_daily_404_error=Je n'ai pas pu envoyer le message quotidien dans le salon désigné. \rPeut-être qu'il a été supprimé ? :c \nMerci d'utiliser `/setup` pour reconfigurer le message journalier, ou alors `/desactiver-toobo` pour que je vous laisse tranquille, ou alors je vous harcèlerai TOUS LES JOURS !!! MWAHAHAHAHHAHAAAA !!!!!
-meteo_format_error=La commande doit être au format JJ-MM-AAAA ! \nExemple : `%prefix%meteo 21/07/2024`
+meteo_format_error=La commande doit être au format JJ-MM-AAAA ! \nExemple : `%prefix%meteo 22/07/2024`
