@@ -34,10 +34,10 @@ def format_date(date_str):
 
     return f"{year}-{month}-{day}"
     
-async def get_meteo(lang, date=get_tomorrow_date()):
+async def get_meteo(lang, date=None):
     global meteo_cache
     
-    if date.strip() == '':
+    if date is None or date.strip() == '':
         date = get_tomorrow_date()
 
     date = format_date(date)
