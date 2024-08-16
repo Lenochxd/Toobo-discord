@@ -1,5 +1,13 @@
 # Toobo discord bot
 
+<div align="center">
+  
+  ![License](https://img.shields.io/badge/license-MIT-green?style=flat)
+  [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Lenochxd/Toobo-discord.svg?style=flat)](https://github.com/Lenochxd/Toobo-API/releases)
+  ![Stars](https://img.shields.io/github/stars/Lenochxd/Toobo-discord?style=flat)
+  [![Discord](https://img.shields.io/discord/391919052563546112?style=flat&logo=Discord&logoColor=fff&label=Discord&color=5e6ae8&link=https%3A%2F%2Fdiscord.gg%2FtUPsYHAGfm)](https://discord.gg/tUPsYHAGfm)
+</div>
+
 Toobo is a character from the French children's weather forecast show "[La météo de Gulli](https://fr.wikipedia.org/wiki/La_M%C3%A9t%C3%A9o_de_Gulli)". This adorable mascot presents weather information in a fun and engaging way for young viewers. In the show, Toobo uses simple language and playful animations to explain weather concepts and forecasts, making meteorology accessible and entertaining for children.
 
 This Discord bot uses the [Toobo-API](https://github.com/Lenochxd/Toobo-API) to cast daily messages with meteorological information. It brings a cheerful approach to weather updates on Discord servers, providing weather information and forecasts with a friendly personality, making it both informative, enjoyable and funny.
