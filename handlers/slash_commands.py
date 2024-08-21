@@ -33,7 +33,8 @@ def register_slash_commands(bot: commands.Bot):
             name=locales[command]['args'][0]['name'][default_locale],
             name_localizations=locales[command]['args'][0]['name'],
             description=locales[command]['args'][0]['desc'][default_locale],
-            description_localizations=locales[command]['args'][0]['desc']
+            description_localizations=locales[command]['args'][0]['desc'],
+            dm_permission=False
         )
     ):
         await set_prefix_slash(lang, interaction, new_prefix)
@@ -45,7 +46,8 @@ def register_slash_commands(bot: commands.Bot):
         description=locales[command]['desc'][default_locale],
         name_localizations=locales[command]['name'],
         description_localizations=locales[command]['desc'],
-        default_member_permissions=(nextcord.Permissions(manage_guild=True))
+        default_member_permissions=(nextcord.Permissions(manage_guild=True)),
+        dm_permission=False
     )
     @application_checks.has_permissions(manage_guild=True)
     async def set_daily_command(interaction: nextcord.Interaction,
@@ -74,7 +76,8 @@ def register_slash_commands(bot: commands.Bot):
         name=locales[command]['name'][default_locale],
         description=locales[command]['desc'][default_locale],
         name_localizations=locales[command]['name'],
-        description_localizations=locales[command]['desc']
+        description_localizations=locales[command]['desc'],
+        dm_permission=False
     )
     async def enable_auto_message_command(interaction: nextcord.Interaction):
         await enable_auto_message_slash(lang, interaction)
@@ -85,7 +88,8 @@ def register_slash_commands(bot: commands.Bot):
         name=locales[command]['name'][default_locale],
         description=locales[command]['desc'][default_locale],
         name_localizations=locales[command]['name'],
-        description_localizations=locales[command]['desc']
+        description_localizations=locales[command]['desc'],
+        dm_permission=False
     )
     async def disable_auto_message_command(interaction: nextcord.Interaction):
         await disable_auto_message_slash(lang, interaction)
@@ -106,7 +110,7 @@ def register_slash_commands(bot: commands.Bot):
             description_localizations=locales[command]['args'][0]['desc'],
             required=False,
             min_length=6, # 1/2/24
-            max_length=10 # 10/21/2024
+            max_length=10 # 10/02/2024
         )
     ):
         await send_meteo_slash(lang, prefix.get(interaction.guild_id), interaction, meteo_date)
